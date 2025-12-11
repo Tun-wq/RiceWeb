@@ -1,15 +1,15 @@
 <template>
-  <div class="draws-card"></div>
+  <div class="portfolio-card"></div>
 </template>
 
 <script>
 export default {
-  name: 'DrawsCard',
+  name: 'PortfolioCard',
 }
 </script>
 
 <style scoped>
-.draws-card {
+.portfolio-card {
   width: 100%;
   height: 100%;
   background-color: #4ecdc4;

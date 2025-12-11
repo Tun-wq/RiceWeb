@@ -1,15 +1,15 @@
 <template>
-  <div class="mbti-card"></div>
+  <div class="about-card"></div>
 </template>
 
 <script>
 export default {
-  name: 'MbtiCard',
+  name: 'AboutCard',
 }
 </script>
 
 <style scoped>
-.mbti-card {
+.about-card {
   width: 100%;
   height: 100%;
   background-color: #45b7d1;

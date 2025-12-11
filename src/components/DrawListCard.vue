@@ -1,15 +1,15 @@
 <template>
-  <div class="draw-blog-card"></div>
+  <div class="draw-list-card"></div>
 </template>
 
 <script>
 export default {
-  name: 'DrawBlogCard',
+  name: 'DrawlistCard',
 }
 </script>
 
 <style scoped>
-.draw-blog-card {
+.draw-list-card {
   width: 100%;
   height: 100%;
   background-color: #feca57;
