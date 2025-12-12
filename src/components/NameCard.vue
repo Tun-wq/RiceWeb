@@ -1,5 +1,5 @@
 <template>
-  <div class="name-card"></div>
+  <div class="card" id="name-card"></div>
 </template>
 
 <script>
@@ -8,11 +8,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.name-card {
-  width: 100%;
-  height: 100%;
-  background-color: #ff6b6b;
-  border-radius: 8px;
-}
-</style>
+<style scoped></style>

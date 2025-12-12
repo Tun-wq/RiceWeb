@@ -1,0 +1,80 @@
+/* card样式 */
+.card {
+  color: #1d1d1f;
+  user-select: none; /* 控制用户是否可以选择文本以及如何选择，none表示不允许选择 */
+  -webkit-user-select: none; /* 与user-select作用一致，但是是兼容旧版浏览器 */
+  background-color: #fefefe;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  text-decoration: none; /* text-decoration用于给文本添加装饰线，如下划线、删除线等 */
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.8rem #00000020;
+}
+
+.card h4 {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 767px) {
+  #namecard-grid {
+    width: 100%;
+  }
+}
+
+/* namecard样式 */
+#name-card {
+  --profile-z: 3;
+  --contact-z: 10;
+  --noise-z: 5;
+  --gradient-z: 0;
+  --gradient: radial-gradient(#3e8c89, #2c6533);
+  --hover-gradient: radial-gradient(#997c2c, #757f46);
+  border-top-right-radius: 0.15rem;
+  border-bottom-left-radius: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+/* namecard是第0层，则before是第一层，after是第二层 */
+#name-card:before,
+#name-card:after {
+  content: '';
+  transition: opacity 1s; /* before层和after层的opacity值改变时，会触发1s的过渡动画 */
+  position: absolute; /* absolute是相对于父元素(即name-card)的位置，name-card必须要注明position为relative */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 相当于给namecard上了第一层遮罩 */
+#name-card:before {
+  background: var(--gradient);
+  opacity: 0.25;
+}
+
+/* 相当于给namecard上了第二层遮罩，但因为透明度为0所以不显示 */
+#name-card:after {
+  background: var(--hover-gradient);
+  opacity: 0;
+}
+
+/* 鼠标移动到namecard时触发的动画 */
+#name-card:hover {
+  transform: translateY(-1rem);
+}
+
+/* 鼠标移动到namecard时，before层的透明度变为0，after层的透明度变为0.25，触发上述1s的过渡动画 */
+#name-card:hover:before {
+  opacity: 0;
+}
+#name-card:hover:after {
+  opacity: 0.25;
+}
