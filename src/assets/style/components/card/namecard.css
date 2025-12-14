@@ -1,0 +1,155 @@
+/* namecard样式 */
+#name-card {
+  --profile-z: 5;
+  --contact-z: 10;
+  --noise-z: 3;
+  --gradient-z: 0;
+  --gradient: radial-gradient(#3e8c89, #2c6533);
+  --hover-gradient: radial-gradient(#997c2c, #757f46);
+  border-top-right-radius: 0.15rem;
+  border-bottom-left-radius: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+/* namecard是第0层，则before是第一层，after是第二层 */
+#name-card:before,
+#name-card:after {
+  content: '';
+  transition: opacity 1s; /* before层和after层的opacity值改变时，会触发1s的过渡动画 */
+  position: absolute; /* absolute是相对于父元素(即name-card)的位置，name-card必须要注明position为relative */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 相当于给namecard上了第一层遮罩 */
+#name-card:before {
+  background: var(--gradient);
+  opacity: 0.25;
+}
+
+/* 相当于给namecard上了第二层遮罩，但因为透明度为0所以不显示 */
+#name-card:after {
+  background: var(--hover-gradient);
+  opacity: 0;
+}
+
+/* 鼠标移动到namecard时触发的动画 */
+#name-card:hover {
+  transform: translateY(-1rem);
+}
+
+/* 鼠标移动到namecard时，before层的透明度变为0，after层的透明度变为0.25，触发上述1s的过渡动画 */
+#name-card:hover:before {
+  opacity: 0;
+}
+#name-card:hover:after {
+  opacity: 0.25;
+}
+
+/* 背景噪点图片 */
+#noise-image {
+  z-index: var(--noise-z);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* profile样式 */
+#profile {
+	z-index: var(--profile-z);
+	position: relative;
+}
+
+.profile-image img {
+  opacity: .8;
+  border-radius: 100%;
+  width: 10rem;
+  margin: 0 auto;
+  transition: all .3s;
+  display: block;
+}
+
+@media screen and (min-width:768px) {
+  .profile-image img {
+    width: 100%;
+  }
+}
+
+/* 鼠标移动到namecard上时的头像动画 */
+#name-card:hover .profile-image img {
+  border-radius: .75rem;
+  box-shadow: inset 0 .2rem 2.5rem #fff3;
+}
+
+.profile-name {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.profile-name h3 {
+	color: #00000080;
+	font-size: .8rem;
+	font-weight: 300;
+}
+
+.noto-serif {
+	font-optical-sizing: auto;
+	font-family: Noto Serif SC,serif;
+	font-style: normal;
+}
+
+#contact-info {
+  z-index: var(--contact-z);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  position: relative;
+}
+
+#contact-info a {
+  text-align: center;
+  color: #000000bf;
+  background: #ffffff40;
+  border: 1px solid #ffffff59;
+  border-radius: .25rem;
+  width: 100%;
+  padding: .1rem .5rem;
+  font-size: .8rem;
+  display: block;
+}
+
+#contact-info a:first-child::before, a:last-child::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: text-bottom;
+}
+
+#contact-info a:first-child::before {
+  margin-right: 4px;
+  background-image: url('src/assets/image/mihuashi.webp');
+}
+
+#contact-info a:last-child::before {
+  margin-right: 8px;
+  background-image: url('src/assets/image/mailbox.jpg');
+}
+
+.lora {
+	font-optical-sizing: auto;
+	font-family: Lora,serif;
+	font-style: normal;
+}

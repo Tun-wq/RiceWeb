@@ -44,11 +44,9 @@ export default {
 </script>
 
 <style scoped>
-@import '../assets/style/components/card.css';
-
 #container {
   margin: 1rem;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 @media screen and (min-width: 768px) {
@@ -97,6 +95,12 @@ export default {
   .wide-grid {
     grid-column: 3 / span 2;
     aspect-ratio: 2 !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #namecard-grid {
+    width: 100%;
   }
 }
 </style>
