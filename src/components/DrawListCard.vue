@@ -1,5 +1,7 @@
 <template>
-  <div class="draw-list-card"></div>
+  <div class="card">
+
+  </div>
 </template>
 
 <script>
@@ -9,10 +11,6 @@ export default {
 </script>
 
 <style scoped>
-.draw-list-card {
-  width: 100%;
-  height: 100%;
-  background-color: #feca57;
-  border-radius: 8px;
-}
+@import '../assets/style/components/card/card.css';
+@import '../assets/style/components/card/drawlistcard.css';
 </style>

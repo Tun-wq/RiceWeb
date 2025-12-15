@@ -23,7 +23,9 @@
         <ArticleBlogCard />
       </div>
       <!-- 作品展示 -->
-      <div class="wide-grid" id="drawlist-grid"></div>
+      <div class="wide-grid" id="drawlist-grid">
+        <DrawListCard />
+      </div>
     </div>
     <!-- 页脚 -->
     <footer class="noto-serif"></footer>
@@ -113,7 +115,8 @@ export default {
   }
   #namecard-grid,
   #article-blog-grid,
-  #portfolio-grid {
+  #portfolio-grid,
+  #drawlist-grid {
     width: 100%;
   }
   #about-grid,
