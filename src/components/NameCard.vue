@@ -3,7 +3,7 @@
     <div id="noise-image" style="background-image: url('src/assets/image/noise.png')"></div>
     <div id="profile">
       <div class="profile-image">
-        <img src="/src/assets/image/avatar.jpg"></img>
+        <img src="/src/assets/image/avatar.jpg" />
       </div>
       <div class="profile-name">
         <h2 class="noto-serif">木合鸟</h2>
@@ -11,9 +11,15 @@
       </div>
     </div>
 
-    <div id="contact-info" class="lora">
-      <a href="https://www.mihuashi.com/profiles/4289290?role=painter&relayId=mj5k0c4h-ts7zzxqihr" target="_blank" rel="noopener noreferrer">米画师</a>
-      <a href="mailto:3031508518@qq.com">Email</a>
+    <div id="contact-info">
+      <a
+        href="https://www.mihuashi.com/profiles/4289290?role=painter&relayId=mj5k0c4h-ts7zzxqihr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="noto-serif"
+        >米画师</a
+      >
+      <a href="mailto:3031508518@qq.com" class="lora">Email</a>
     </div>
   </div>
 </template>

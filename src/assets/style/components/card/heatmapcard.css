@@ -1,0 +1,18 @@
+.noto-sans {
+  font-optical-sizing: auto;
+  font-family:
+    Noto Sans SC,
+    serif;
+  font-style: normal;
+}
+
+#heatmap-card {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#heatmap-card h4 {
+  font-size: 1rem;
+}

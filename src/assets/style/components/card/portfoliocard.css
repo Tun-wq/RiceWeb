@@ -1,0 +1,24 @@
+。portfolio-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#rice-portfolio-card {
+  background-image: linear-gradient(#e9e8ed, #0000);
+}
+
+.noto-serif {
+  font-optical-sizing: auto;
+  font-family:
+    Noto Serif SC,
+    serif;
+  font-style: normal;
+}
+
+.portfolio-card-image {
+  align-self: flex-end;
+}
+
+#portfolio-card-text p {
+  font-weight: 650;
+}

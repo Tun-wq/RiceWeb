@@ -1,0 +1,44 @@
+/* aboutcard样式 */
+#about-card {
+  position: relative;
+}
+
+#about-card:before {
+  content: '';
+  background-color: #a0c878bf;
+  border-radius: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -35%;
+  right: -35%;
+}
+
+#about-image {
+  width: 75%;
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  transform: rotate(-5deg);
+  transition: all 0.3s;
+}
+
+#about-image:hover {
+  transform: rotate(0) translateY(-1rem) scale(1.05);
+}
+
+#about-card-content h4 {
+  color: #a0c878;
+}
+
+#about-card-content p {
+  font-weight: 650;
+}
+
+.noto-serif {
+  font-optical-sizing: auto;
+  font-family:
+    Noto Serif SC,
+    serif;
+  font-style: normal;
+}

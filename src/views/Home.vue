@@ -7,13 +7,21 @@
         <NameCard />
       </div>
       <!-- 作品集 -->
-      <div id="portfolio-grid"></div>
+      <div id="portfolio-grid">
+        <PortfolioCard />
+      </div>
       <!-- 关于 -->
-      <div class="mobile-inline-grid" id="about-grid"></div>
+      <div class="mobile-inline-grid" id="about-grid">
+        <AboutCard />
+      </div>
       <!-- 热力图 -->
-      <div class="mobile-inline-grid" id="heatmap-grid"></div>
+      <div class="mobile-inline-grid" id="heatmap-grid">
+        <HeatmapCard />
+      </div>
       <!-- 文章 -->
-      <div id="articalblog-grid"></div>
+      <div id="article-blog-grid">
+        <ArticleBlogCard />
+      </div>
       <!-- 作品展示 -->
       <div class="wide-grid" id="drawlist-grid"></div>
     </div>
@@ -26,7 +34,7 @@
 import NameCard from '../components/NameCard.vue'
 import PortfolioCard from '../components/PortfolioCard.vue'
 import AboutCard from '../components/AboutCard.vue'
-import ArticalBlogCard from '../components/ArticalBlogCard.vue'
+import ArticleBlogCard from '../components/ArticleBlogCard.vue'
 import DrawListCard from '../components/DrawListCard.vue'
 import HeatmapCard from '../components/HeatmapCard.vue'
 
@@ -36,7 +44,7 @@ export default {
     NameCard,
     PortfolioCard,
     AboutCard,
-    ArticalBlogCard,
+    ArticleBlogCard,
     DrawListCard,
     HeatmapCard,
   },
@@ -99,8 +107,19 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  #namecard-grid {
+  .mobile-inline-grid {
+    height: 15rem;
+    /* background-color:blueviolet; */
+  }
+  #namecard-grid,
+  #article-blog-grid,
+  #portfolio-grid {
     width: 100%;
+  }
+  #about-grid,
+  #heatmap-grid {
+    width: calc(50% - var(--gap) / 2);
+    /* background-color:blueviolet; */
   }
 }
 </style>

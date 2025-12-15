@@ -1,0 +1,24 @@
+.article-blog-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#rice-article-card {
+  background-image: linear-gradient(#e9e8ed, #0000);
+}
+
+.noto-serif {
+  font-optical-sizing: auto;
+  font-family:
+    Noto Serif SC,
+    serif;
+  font-style: normal;
+}
+
+.article-blog-card-image {
+  align-self: flex-end;
+}
+
+#article-blog-card-text p {
+  font-weight: 650;
+}

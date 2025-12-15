@@ -1,5 +1,8 @@
 <template>
-  <div class="heatmap-card"></div>
+  <div class="card noto-sans" id="heatmap-card">
+    <h4>画画张数热力图</h4>
+    <div id="cal-heatmap"></div>
+  </div>
 </template>
 
 <script>
@@ -9,10 +12,6 @@ export default {
 </script>
 
 <style scoped>
-.heatmap-card {
-  width: 100%;
-  height: 100%;
-  background-color: #ff9ff3;
-  border-radius: 8px;
-}
+@import '../assets/style/components/card/card.css';
+@import '../assets/style/components/card/heatmapcard.css';
 </style>
