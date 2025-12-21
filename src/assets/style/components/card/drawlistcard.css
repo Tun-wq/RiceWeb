@@ -1,0 +1,34 @@
+.card-stack {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0;
+  padding: 0 0;
+  position: relative;
+}
+
+.piece {
+  list-style: none;
+  position: absolute;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.piece.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.piece img {
+  width: 100%;
+  height: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+  pointer-events: none;
+}
