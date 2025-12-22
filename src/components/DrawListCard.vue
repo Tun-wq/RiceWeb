@@ -1,59 +1,47 @@
 <template>
-  <div class="card">
-    <ul class="card-stack" id="cardStack">
-      <li class="piece">
-        <img src="../assets/image/pic1.jpg" alt="Card image">
-      </li>
-      <li class="piece">
-        <img src="../assets/image/pic2.jpg" alt="Card image">
-      </li>
-      <li class="piece">
-        <img src="../assets/image/pic4.png" alt="Card image">
-      </li>
-      <!-- <li class="piece">
-        <img src="../assets/image/pic2.jpg" alt="Card image">
-      </li>
-      <li class="piece">
-        <img src="../assets/image/pic3.jpg" alt="Card image">
-      </li>
-      <li class="piece">
-        <img src="../assets/image/pic4.png" alt="Card image">
-      </li>
-      <li class="piece">
-        <img src="../assets/image/pic5.jpg" alt="Card image">
-      </li> -->
-    </ul>
+  <div class="card" id="draw-list-card" ref="drawListCard" @wheel="handleWheel">
+    <div v-for="item in items" :key="item.id" class="item">
+      <!-- <img :src="item.imageUrl" :alt="'图片' + (index + 1)" class="item-image"> -->
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'DrawlistCard',
-  props: {
-    photos: {
-      type: Array,
-      default: () => [
-        'src/assets/image/pic1.jpg',
-        'src/assets/image/pic2.jpg',
-        'src/assets/image/pic3.jpg',
-        'src/assets/image/pic4.jpg',
-      ],
-    },
-  },
   data() {
     return {
-      CARD_OFFSET: 4,
-      ROTATION_FACTOR: 6,
-      cards: [],
-      dragState: {
-        isDragging: false,
-        startY: 0,
-        currentY: 0,
-        draggedIndex: -1,
-      },
+      items: Array.from({ length: 5 }, (_, i) => ({
+        id: i,
+        value: i + 1,
+      })),
+      // items: [
+      //   { id: 0, imageUrl: require('../assets/image/pic1.jpg') },
+      //   { id: 1, imageUrl: require('../assets/image/pic1.jpg') },
+      //   { id: 2, imageUrl: require('../assets/image/pic1.jpg') },
+      //   { id: 3, imageUrl: require('../assets/image/pic1.jpg') },
+      //   { id: 4, imageUrl: require('../assets/image/pic1.jpg') },
+      // ]
     }
   },
-  methods: {},
+  methods: {
+    handleWheel(event) {
+      if (event.deltaY > 0) {
+        this.moveNext();
+      } else {
+        this.movePrev();
+      }
+      event.preventDefault(); // 防止页面滚动
+    },
+    moveNext() {
+      const firstItem = this.items.shift();
+      this.items.push(firstItem);
+    },
+    movePrev() {
+      const lastItem = this.items.pop();
+      this.items.unshift(lastItem);
+    },
+  }
 }
 </script>
 

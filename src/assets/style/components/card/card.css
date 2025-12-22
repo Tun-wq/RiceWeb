@@ -12,7 +12,6 @@
   display: block;
   overflow: hidden;
   box-shadow: 0 0.2rem 0.8rem #00000020;
-  position: relative;
 }
 
 .card h4 {
