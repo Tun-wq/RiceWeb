@@ -119,6 +119,9 @@ export default {
   #drawlist-grid {
     width: 100%;
   }
+  #drawlist-grid {
+    height: 15rem;
+  }
   #about-grid,
   #heatmap-grid {
     width: calc(50% - var(--gap) / 2);
