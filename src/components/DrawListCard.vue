@@ -1,7 +1,6 @@
 <template>
   <div class="card" id="draw-list-card" ref="drawListCard" @wheel="handleWheel">
-    <div v-for="item in items" :key="item.id" class="item">
-      <!-- <img :src="item.imageUrl" :alt="'图片' + (index + 1)" class="item-image"> -->
+    <div v-for="item in items" :key="item.id" class="item" :style="getItemStyle(item.id)">
     </div>
   </div>
 </template>
@@ -13,18 +12,18 @@ export default {
     return {
       items: Array.from({ length: 5 }, (_, i) => ({
         id: i,
-        value: i + 1,
       })),
-      // items: [
-      //   { id: 0, imageUrl: require('../assets/image/pic1.jpg') },
-      //   { id: 1, imageUrl: require('../assets/image/pic1.jpg') },
-      //   { id: 2, imageUrl: require('../assets/image/pic1.jpg') },
-      //   { id: 3, imageUrl: require('../assets/image/pic1.jpg') },
-      //   { id: 4, imageUrl: require('../assets/image/pic1.jpg') },
-      // ]
     }
   },
   methods: {
+    getItemStyle(id) {
+      const imageUrl = `src/assets/image/home/pic${id+1}.jpg`;
+      return {
+        backgroundImage: `url(${imageUrl})`,
+        backgroundSize: 'cover',
+      }
+    },
+
     handleWheel(event) {
       if (event.deltaY > 0) {
         this.moveNext();
