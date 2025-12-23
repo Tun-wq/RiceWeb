@@ -4,7 +4,8 @@
 }
 
 #rice-portfolio-card {
-  background-image: linear-gradient(#e9e8ed, #0000);
+  background-image: linear-gradient(#3e8c8910, #2c653320);
+  color: #1d1d1f;
 }
 
 .noto-serif {
@@ -21,4 +22,7 @@
 
 #portfolio-card-text p {
   font-weight: 650;
+  font-size: 0.95rem;
+  color: #00000090;
+  /* margin-top: 0.25rem; */
 }

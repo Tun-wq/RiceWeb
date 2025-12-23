@@ -33,6 +33,9 @@
 
 #about-card-content p {
   font-weight: 650;
+  font-size: 0.95rem;
+  color: #00000090;
+  /* margin-top: 0.25rem; */
 }
 
 .noto-serif {
