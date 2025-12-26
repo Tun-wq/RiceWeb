@@ -87,7 +87,7 @@ export default {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background-color: azure;
+    /* background-color: azure; */
   }
 
   #bento > div {
